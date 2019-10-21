@@ -1,0 +1,60 @@
+{
+  "name": "WhatsApp Notifications (Alpha)",
+  "author": {
+    "name": "Alexis C",
+    "email": "acozette@zendesk.com",
+    "url": ""
+  },
+  "defaultLocale": "en",
+  "private": true,
+  "location": {
+    "support": {
+      "top_bar": "assets/iframe_topbar.html"
+    }
+  },
+  "domainWhitelist": ["api.smooch.io"],
+  "parameters": [
+  {
+    "name": "appId",
+    "type": "text",
+    "required": true,
+    "secure": false
+  },
+  {
+    "name": "jwt",
+    "type": "text",
+    "required": true,
+    "secure": true
+  },
+  {
+    "name": "integrationId",
+    "type": "text",
+    "required": true,
+    "secure": false
+  },
+  {
+    "name": "namespace",
+    "type": "text",
+    "required": true,
+    "secure": false
+  },
+  {
+    "name": "templates",
+    "type": "multiline",
+    "required": true,
+    "secure": false
+  },
+  {
+    "name": "language",
+    "type": "text",
+    "required": true,
+    "secure": false
+  },
+  {
+    "name": "notificationAPI",
+    "type": "checkbox"
+  }
+  ],
+  "version": "1.0",
+  "frameworkVersion": "2.0"
+}

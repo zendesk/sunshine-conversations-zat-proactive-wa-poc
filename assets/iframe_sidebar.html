@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- http://garden.zendesk.com -->
+    <link rel="stylesheet" href="https://assets.zendesk.com/apps/sdk-assets/css/2/zendesk_garden.css" type="text/css">
+    <link rel="stylesheet" href="style/sidebar.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <h1 id="title">Send a proactive message on WA</h1>
+    <p>Select the name of the notification that you are sending here</p>
+    <select id="hsm"></select>
+    <!--<input type="text" id="notification">--><br>
+    <p>Enter the phone number of the user you are sending to in the following form - 14151234567</p>
+    <input type="tel" id="phone">
+    <br>
+    <p>Enter the placeholder data</p>
+    <p>Placeholder 1 - <input type="text" id="p1"></p>
+    <p>Placeholder 2 - <input type="text" id="p2"></p>
+    <p>Placeholder 3 - <input type="text" id="p3"></p>
+    <p>Placeholder 4 - <input type="text" id="p4"></p>
+    <p>Placeholder 5 - <input type="text" id="p5"></p>
+    <input type="submit" id="send">
+    <br>
+    <br>
+    <label id=api_response></label>
+    
+    <!-- https://github.com/zendesk/zendesk_app_framework_sdk -->
+    <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
