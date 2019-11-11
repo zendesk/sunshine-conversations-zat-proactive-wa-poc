@@ -1,14 +1,6 @@
-# App name
+# zat-proactive-wa-poc
+Zendesk Support App for proactive messaging on WhatsApp
 
-[brief description of the app]
-
-### The following information is displayed:
-
-* info1
-* info2
-* info3
-
-Please submit bug reports to [Insert Link](). Pull requests are welcome.
-
-### Screenshot(s):
-[put your screenshots down here.]
+# Zendesk tutorials:
+https://develop.zendesk.com/hc/en-us/articles/360001075048-Installing-and-using-the-Zendesk-apps-tools
+https://developer.zendesk.com/apps/docs/developer-guide/zat
