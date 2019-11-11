@@ -10,7 +10,7 @@
       "integrationId"    : { "label": "WhatsApp Integration ID" },
       "namespace"    : { "label": "WhatsApp Namespace", "helpText": "The namespace is given by Whatsapp on your WABA." },
       "templates"    : { "label": "Enabled WA templates", "helpText": "Input the list of WA templates that you want to enable on ZD Support, separated by commas." },
-      "language"    : { "label": "Template language", "helpText": "Language to apply to ALL template (en_US or pt_BR)" },
+      "language"    : { "label": "Template language", "helpText": "Language to apply to ALL template (en\\_US or pt\\_BR)" },
       "notificationAPI"    : { "label": "Notification API enabled", "helpText": "Specify if the Smooch Notification API is enabled for your account." }
     }
   }

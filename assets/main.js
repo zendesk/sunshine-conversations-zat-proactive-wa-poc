@@ -70,15 +70,19 @@ $(function() {
     //Call to the Notification API
     function submitNotificationAPI(phone, template_name) {
 
+      console.log("submitNotificationAPI");
+
       var param = [$('#p1').val(), $('#p2').val(), $('#p3').val(), $('#p4').val(), $('#p5').val()];
-      var localizable_params = {};
+      var localizable_params = [];
       param.forEach(function(lp, index) {
         if (lp) {
             var p = {};
             p.default = lp;
-            localizable_params[index] = p;
+            localizable_params.push(p);
         }
       });
+
+      //console.log(JSON.stringify(localizable_params));
 
       var data = {
         "storage": "full",
@@ -86,32 +90,30 @@ $(function() {
             "integrationId": integrationId,
             "destinationId": phone
         },
+        "author": {
+            "role": "appMaker"
+        },
+        "messageSchema": "whatsapp",
         "message": {
-            "role": "appMaker",
-            "type": "text",
-            "text": "Fallback",
-            "override": {
-                "whatsapp": {
-                    "payload": {
-                        "type": "hsm",
-                        "hsm": {
-                            "namespace": namespace,
-                            "element_name": template_name,
-                            "language": {
-                                "policy": "deterministic",
-                                "code": language
-                            },
-                            "localizable_params": localizable_params
-                          }
-                      }
-                  }
-              }
+            "type": "hsm",
+            "hsm": {
+                "namespace": namespace,
+                "element_name": template_name,
+                "language": {
+                    "policy": "fallback",
+                    "code": language
+                },
+                "localizable_params": localizable_params
             }
         }
+    }
+
+    //console.log(JSON.stringify(data));
 
       var settings = {
         url: 'https://api.smooch.io/v1.1/apps/'+appId+'/notifications',
         headers: {"Authorization": "Bearer {{setting.jwt}}"},
+        //headers: {"Authorization": "Bearer " + jwt }, //for live debugging
         secure: true,
         type: 'POST',
         contentType: 'application/json',
@@ -208,36 +210,33 @@ $(function() {
     function sendHSM(phone,template_name) {
       
       var param = [$('#p1').val(), $('#p2').val(), $('#p3').val(), $('#p4').val(), $('#p5').val()];
-      var localizable_params = {};
+      var localizable_params = [];
       param.forEach(function(lp, index) {
         if (lp) {
             var p = {};
             p.default = lp;
-            localizable_params[index] = p;
+            localizable_params.push(p);
         }
       });
+      //console.log(JSON.stringify(localizable_params));
 
       var data = {
         "role": "appMaker",
-        "type": "text",
-        "text": "Fallback",
-        "override": {
-          "whatsapp": {
-            "payload": {
-              "type": "hsm",
-              "hsm": {
+        "messageSchema": "whatsapp",
+        "message": {
+            "type": "hsm",
+            "hsm": {
                 "namespace": namespace,
                 "element_name": template_name,
                 "language": {
-                  "policy": "fallback",
-                  "code": language
+                    "policy": "fallback",
+                    "code": language
                 },
                 "localizable_params": localizable_params
-              }
             }
-          }
         }
       }
+      //console.log(JSON.stringify(data));
 
       var settings = {
         url: 'https://api.smooch.io/v1.1/apps/'+appId+'/appusers/'+phone+'/messages',
