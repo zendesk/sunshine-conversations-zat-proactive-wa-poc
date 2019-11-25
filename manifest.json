@@ -1,7 +1,7 @@
 {
-  "name": "WhatsApp Notifications (Alpha)",
+  "name": "WhatsApp Notifier",
   "author": {
-    "name": "Alexis C",
+    "name": "Alexis Cozette",
     "email": "acozette@zendesk.com",
     "url": ""
   },
@@ -49,10 +49,6 @@
     "type": "text",
     "required": true,
     "secure": false
-  },
-  {
-    "name": "notificationAPI",
-    "type": "checkbox"
   }
   ],
   "version": "1.0",

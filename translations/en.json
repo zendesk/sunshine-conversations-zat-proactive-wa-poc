@@ -2,13 +2,13 @@
   "app": {
     "name": "WhatsApp Notifications",
     "short_description": "Allows to send proactive messages to Whatsapp.",
-    "long_description": "",
-    "installation_instructions": "Sunshine Conversations/Zendesk should provide you the value for each parameter.",
+    "long_description": "Allows to send proactive messages to Whatsapp throught the SUnchine Conversation Notification API.",
+    "installation_instructions": "Please make sure that the Notification API has been enable for your account.\nThe Sunshine Conversations Team can help you get the value of each parameter.",
     "parameters": {
       "appId" : { "label": "Sunshine Conversations ID" , 
-        "helpText": "ID of your app on the Sunshine Conversations dashboard (URL: https://smooch.io)" },
+        "helpText": "ID of your app on the Sunshine Conversations dashboard (URL: https://smooch.io)\nPlease make sure that the Notification API has been enable for your account." },
 
-      "jwt"     : { "label": "Sunshine Conversations App token" , 
+      "jwt" : { "label": "Sunshine Conversations App token" , 
         "helpText": "- STEP 1: Go to www.jwt.io\n\n- STEP 2: in header:\n{\n\n\"alg\": \"HS256\",\n \"typ\": \"JWT\",\n\"kid\": \"<<YOUR APP KEY>>\"\n}\n\n- STEP 3: in payload:\n{\n\"scope\": \"app\"\n}\n\n- STEP 4: in signature, put the secret that matches the key you provided in the header\non the left part, you’ll get your token (jwt)"},
 
       "integrationId"    : { "label": "WhatsApp Integration ID" , 
@@ -21,10 +21,7 @@
         "helpText": "Input the list of WA templates that you want to enable on ZD Support, separated by commas (no whitespace!)." },
 
       "language"    : { "label": "Template language", 
-        "helpText": "Language to apply to ALL template (for example en\\_US or pt\\_BR)" },
-
-      "notificationAPI"    : { "label": "Notification API enabled", 
-        "helpText": "Specify if the Sunshine Conversations Notification API is enabled for your account." }
+        "helpText": "Language to apply to ALL template (for example en\\_US or pt\\_BR)" }
     }
   }
 }

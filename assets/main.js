@@ -49,7 +49,7 @@ $(function() {
       namespace = meta.settings['namespace'];
       templateNames = meta.settings['templates'];
       language = meta.settings['language'];
-      notificationAPI = meta.settings['notificationAPI'];
+      notificationAPI = true;
       
       buildDropDown(templateNames, $('#hsm'), "Select a template...");
     });    
@@ -130,6 +130,7 @@ $(function() {
       });
     }
 
+    /*
     //Call to the Conversation API - createUser
     function precreateAppUser(phone,template_name) {
       //Precreate AppUser (if already exist it will generate a 409 error but.. whatever)
@@ -205,7 +206,6 @@ $(function() {
       });
     }
 
-
     //Call to the Conversation API - send HSM
     function sendHSM(phone,template_name) {
       
@@ -258,5 +258,6 @@ $(function() {
         $('#api_send').text('Done.');
       });
     }
+  */
   });
 });
