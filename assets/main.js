@@ -23,7 +23,7 @@ $(function() {
     // Add the empty option with the empty message
     dropdown.append('<option value="">' + empty + '</option>');
     // Check result isnt empty
-    var array = list.split(',');
+    var array = list.split(',').map(item => item.trim());
     if(array.length > 0)
     {
         // Loop through each of the results and append the option to the dropdown
