@@ -85,7 +85,6 @@ $(function() {
       //console.log(JSON.stringify(localizable_params));
 
       var data = {
-        "storage": "full",
         "destination": {
             "integrationId": integrationId,
             "destinationId": phone
@@ -222,6 +221,11 @@ $(function() {
 
       var data = {
         "role": "appMaker",
+        "destination": {
+            "integrationType": "whatsapp",
+            // per https://docs.smooch.io/rest/#channel-targeting
+            // you may want to wait+retry if you get an error
+        },
         "messageSchema": "whatsapp",
         "message": {
             "type": "hsm",
